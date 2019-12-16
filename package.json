@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"scripts": {
 		"start": "http-server",
-		"start:ts": "ts-node ./stack/Stack.ts"
+		"start:ts": "ts-node ./stack/converter"
 	},
 	"devDependencies": {
 		"http-server": "^0.12.0",

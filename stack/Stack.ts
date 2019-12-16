@@ -107,11 +107,4 @@ class StackBaseWeakMap<T = number> implements StackType<T> {
 	}
 }
 
-const s = new StackBaseObject();
-
-s.push(1);
-s.push(2);
-s.push(3);
-
-console.log(s);
-console.log(s.toString());
+module.exports = StackBaseArray;
