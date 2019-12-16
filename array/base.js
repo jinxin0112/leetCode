@@ -1,6 +1,5 @@
 //@ts-check
 
-
 let arr = [1, 2, 3];
 
 for (let item of arr) {
@@ -22,3 +21,13 @@ const arr1 = ['a', 'b', 'A', 'B'];
 arr1.sort((a, b) => a.localeCompare(b));
 
 console.log(arr1);
+
+// type array
+
+const int8 = new Int8Array(3);
+
+for (let i = 0; i < int8.length; i++) {
+	int8[i] = i + 1;
+}
+
+console.log(int8);

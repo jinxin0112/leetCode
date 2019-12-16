@@ -3,15 +3,17 @@ interface Person {
 	age: number;
 }
 
-const jinixn = {
+const jinxin = {
 	name: 'jinxin',
 	age: 25,
-	phone: 18508218948
 };
 
 function printName(person: Person) {
 	console.log(person.name);
 }
 
+const friends = [
+	jinxin
+]
 
-printName(jinixn);
+printName(jinxin);
