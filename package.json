@@ -1,13 +1,13 @@
 {
-	"name": "LeetCode",
+	"name": "leetCode",
 	"version": "1.0.0",
 	"main": "index.js",
-	"repository": "git@github.com:jinxin0112/LeetCode.git",
+	"repository": "git@github.com:jinxin0112/leetCode.git",
 	"author": "jinxin0112 <18508218948@163.com>",
 	"license": "MIT",
 	"scripts": {
 		"start": "http-server",
-		"start:ts": "ts-node ./queue/QueueBaseStack"
+		"test": "ts-node ./queue/QueueBaseStack"
 	},
 	"devDependencies": {
 		"http-server": "^0.12.0",
