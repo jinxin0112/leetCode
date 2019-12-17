@@ -57,12 +57,5 @@ class Queue<T = number> implements QueueType<T> {
 	}
 }
 
-const queue = new Queue<string>();
-console.log(queue.isEmpty());
-queue.enqueue('jinxin');
-queue.enqueue('ymj');
-queue.dequeue();
-console.log(queue.size());
-console.log(queue.toString());
 
 module.exports = Queue;

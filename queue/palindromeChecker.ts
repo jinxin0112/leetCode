@@ -11,7 +11,7 @@ function palindromeChecker(target: string): boolean {
 	let firstString, lastString;
 
 	for (let i = 0; i < target.length; i++) {
-		deque.addBack(target[i].toLowerCase());
+		deque.addBack(target.charAt(i).toLowerCase());
 	}
 	console.log(deque.toString());
 	while (deque.size() > 1 && isEqual) {
