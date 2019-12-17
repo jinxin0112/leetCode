@@ -64,3 +64,5 @@ queue.enqueue('ymj');
 queue.dequeue();
 console.log(queue.size());
 console.log(queue.toString());
+
+module.exports = Queue;
