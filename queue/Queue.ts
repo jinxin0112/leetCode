@@ -1,3 +1,5 @@
+// FIFO 先进先出
+
 interface QueueType<T> {
 	enqueue: (element: T) => void;
 	dequeue: () => T;
@@ -5,6 +7,7 @@ interface QueueType<T> {
 	isEmpty: () => boolean;
 	size: () => number;
 	clear: () => void;
+	toString: () => string;
 }
 
 class Queue<T = number> implements QueueType<T> {
@@ -24,6 +27,7 @@ class Queue<T = number> implements QueueType<T> {
 	}
 
 	dequeue() {
+		if (this.isEmpty()) return undefined;
 		const lowestEle = this.items[this.lowestCount];
 		delete this.items[this.lowestCount];
 		this.lowestCount++;
@@ -47,4 +51,16 @@ class Queue<T = number> implements QueueType<T> {
 		this.lowestCount = 0;
 		this.items = {};
 	}
+
+	toString() {
+		return Object.values(this.items).reduce((p, c, i) => (p += `${i === 0 ? '' : ','}${c}`), '');
+	}
 }
+
+const queue = new Queue<string>();
+console.log(queue.isEmpty());
+queue.enqueue('jinxin');
+queue.enqueue('ymj');
+queue.dequeue();
+console.log(queue.size());
+console.log(queue.toString());
