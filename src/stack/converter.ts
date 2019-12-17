@@ -1,7 +1,6 @@
 const Stack = require('./Stack');
 
-function decimalToBinary(decNumber: number): string;
-function decimalToBinary(decNumber) {
+function decimalToBinary(decNumber: number): string {
 	const stack = new Stack();
 
 	let number = decNumber;

@@ -1,7 +1,7 @@
 interface StackType<T> {
 	push: (element: T) => void;
-	pop: () => T;
-	peek: () => T;
+	pop: () => T | undefined;
+	peek: () => T | undefined;
 	isEmpty: () => boolean;
 	clear: () => void;
 	size: () => number;
@@ -12,7 +12,7 @@ class StackBaseArray<T = number> implements StackType<T> {
 	constructor() {
 		this.items = [];
 	}
-	push(element) {
+	push(element: T) {
 		this.items.push(element);
 	}
 	pop() {
@@ -83,7 +83,7 @@ class StackBaseWeakMap<T = number> implements StackType<T> {
 	constructor() {
 		items.set(this, []);
 	}
-	push(element) {
+	push(element: T) {
 		items.get(this).push(element);
 	}
 	pop() {
