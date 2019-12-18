@@ -42,17 +42,8 @@ class Deque<T> implements DequeType<T> {
 	addFront(element: T) {
 		if (this.isEmpty()) {
 			this.addBack(element);
-		} else if (this.lowestCount > 0) {
-			this.items[--this.lowestCount] = element;
 		} else {
-			// 看成是数组，lowestCount 最小值为0。 也可以设置负值key，以达到最低计算成本
-			// 从后往前遍历
-			for (let i = this.count; i > 0; i--) {
-				this.items[i] = this.items[i - 1];
-			}
-			this.count++;
-			this.lowestCount = 0;
-			this.items[this.lowestCount] = element;
+			this.items[--this.lowestCount] = element;
 		}
 	}
 	addBack(element: T) {
