@@ -58,7 +58,7 @@ class LinkedList<T = any> implements LinkedListType<T> {
 	indexOf(element: T) {
 		let index = 0;
 		let current = this.head;
-		while (!this.equalsFn(current.element, element) && current) {
+		while (current && !this.equalsFn(current.element, element)) {
 			current = current.next;
 			index++;
 		}
