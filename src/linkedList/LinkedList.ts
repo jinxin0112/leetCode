@@ -1,8 +1,7 @@
 const defaultEqualsFn = <T = any>(a: T, b: T): boolean => a === b;
 
 class Node<T = any> {
-	public next: Node<T>;
-	constructor(public element: T) {}
+	constructor(public element: T, public next?: Node<T>) {}
 }
 
 interface LinkedListType<T> {
@@ -18,16 +17,16 @@ interface LinkedListType<T> {
 	toString: () => string;
 }
 class LinkedList<T = any> implements LinkedListType<T> {
-	private count: number;
-	private head: Node<T> | null;
-	private equalsFn: (a: T, b: T) => boolean;
+	protected count: number;
+	protected head: Node<T> | null;
+	protected equalsFn: (a: T, b: T) => boolean;
 	constructor(equalsFn = defaultEqualsFn) {
 		this.count = 0;
 		this.head = null;
 		this.equalsFn = equalsFn;
 	}
 	push(element: T) {
-		const node = new Node(element);
+		const node = element instanceof Node ? element : new Node(element);
 		if (this.isEmpty()) {
 			this.head = node;
 		} else {
@@ -122,4 +121,8 @@ class LinkedList<T = any> implements LinkedListType<T> {
 	}
 }
 
-module.exports = LinkedList;
+module.exports = {
+	LinkedList,
+	Node,
+	defaultEqualsFn
+};
